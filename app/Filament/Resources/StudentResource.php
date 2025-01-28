@@ -23,7 +23,10 @@ class StudentResource extends Resource
     {
         return $form
             ->schema([
-                //
+                Forms\Components\TextInput::make('name')->required()->maxlength(40),
+                Forms\Components\TextInput::make('student_id'),
+                Forms\Components\TextInput::make('phone'),
+                Forms\Components\TextInput::make('address')
             ]);
     }
 

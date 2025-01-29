@@ -21,6 +21,7 @@ class DatabaseSeeder extends Seeder
             'email' => 'liza@gmail.com',
             'password' => bcrypt('12345678'),
         ]);
-        Student::factory(10)->create();
+        Student::factory(50000)->create();
+        $this->call(StandardSeeder::class);
     }
 }

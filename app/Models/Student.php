@@ -10,4 +10,8 @@ class Student extends Model
     /** @use HasFactory<\Database\Factories\StudentFactory> */
     use HasFactory;
     protected $guarded=[''];
+
+    public function standard(){
+        return $this->belongsTo(Standard::class);
+    }
 }

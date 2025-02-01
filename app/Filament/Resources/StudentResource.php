@@ -26,7 +26,8 @@ class StudentResource extends Resource
                 Forms\Components\TextInput::make('name')->required()->maxlength(40),
                 Forms\Components\TextInput::make('student_id'),
                 Forms\Components\TextInput::make('phone'),
-                Forms\Components\TextInput::make('address')
+                Forms\Components\TextInput::make('address'),
+                Forms\Components\Select::make('standard_id')->required()->relationship('standard','name')
             ]);
     }
 
@@ -34,10 +35,11 @@ class StudentResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('student_id'),
-                Tables\Columns\TextColumn::make('name'),
-                Tables\Columns\TextColumn::make('phone'),
-                Tables\Columns\TextColumn::make('address'),
+                Tables\Columns\TextColumn::make('student_id')->searchable(),
+                Tables\Columns\TextColumn::make('name')->searchable(),
+                Tables\Columns\TextColumn::make('phone')->searchable(),
+                Tables\Columns\TextColumn::make('address')->searchable(),
+                Tables\Columns\TextColumn::make('standard.name')->searchable(),
             ])
             ->filters([
                 //

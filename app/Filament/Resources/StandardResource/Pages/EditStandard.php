@@ -19,6 +19,6 @@ class EditStandard extends EditRecord
 
     protected function getRedirectUrl(): ?string
     {
-        return route('');
+        return route('filament.admin.resources.standards.index');
     }
 }
